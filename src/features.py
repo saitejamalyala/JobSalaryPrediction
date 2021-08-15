@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.base import BaseEstimator
 
+
 class FeatureMapper:
     def __init__(self, features):
         self.features = features
@@ -19,7 +20,7 @@ class FeatureMapper:
                 extracted.append(fea)
         if len(extracted) > 1:
             return np.concatenate(extracted, axis=1)
-        else: 
+        else:
             return extracted[0]
 
     def fit_transform(self, X, y=None):
@@ -32,11 +33,13 @@ class FeatureMapper:
                 extracted.append(fea)
         if len(extracted) > 1:
             return np.concatenate(extracted, axis=1)
-        else: 
+        else:
             return extracted[0]
+
 
 def identity(x):
     return x
+
 
 class SimpleTransform(BaseEstimator):
     def __init__(self, transformer=identity):
