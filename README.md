@@ -1,11 +1,11 @@
 Kaggle - Job Salary Prediction
 ==============================
 
-This repo contains sample code for the [Job Salary Prediction competition](https://www.kaggle.com/c/job-salary-prediction/), hosted by [Kaggle](http://www.kaggle.com) with [Adzuna](http://www.adzuna.co.uk/).
+This repo contains sample code for the [Job Salary Prediction](https://www.kaggle.com/c/job-salary-prediction/), hosted by [Kaggle](http://www.kaggle.com) with [Adzuna](http://www.adzuna.co.uk/).
 
 # Instructions
 This repo contains sample code for the Job salary prediction bvased on Title, Job desciption, Raw location and Normalized location
-Data set used for the project is [Job Salary Prediction competition](https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho)
+Data set used for the project is [Job Salary Prediction](https://www.kaggle.com/c/job-salary-prediction/data)
 
 - Suggested to try the project by creating a virtual environment
   ```
