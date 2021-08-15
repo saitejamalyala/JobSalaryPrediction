@@ -1,0 +1,11 @@
+{
+    "train_data_path": "$SALARY_PRED/assets/data/Train_rev1.csv",
+    "valid_data_path": "$SALARY_PRED/assets/data/Valid_rev1.csv",
+    "test_data_path": "$SALARY_PRED/assets/data/Test_rev1.csv",
+    "mini_test_data_path":"$SALARY_PRED/assets/data/Test_rev1_mini.csv",
+    "model_path": "$SALARY_PRED/assets/models/random_forest.pickle",
+    "prediction_path": "$SALARY_PRED/assets/results/random_forest_benchmark.csv",
+    "test_prediction_path": "$SALARY_PRED/assets/results/random_forest_benchmark_test.csv",
+    "test_groud_truth": "$SALARY_PRED/assets/data/random_forest_benchmark_test_rev1.csv"
+
+}
