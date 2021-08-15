@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from matplotlib import pyplot as plt
 from data_io import get_paths, load_model
+import numpy as np
 
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 # from src.predict import get_prediction
@@ -32,7 +33,36 @@ st.sidebar.markdown(
 )
 
 # collect data
-use_default_data = st.sidebar.checkbox("Use default data", value=False)
+use_default_data = st.sidebar.checkbox("Use default data", value=True,
+                    help=
+"""
+    Id - A unique identifier for each job ad
+
+    Title - A freetext field supplied to us by the job advertiser as the Title of the job ad.  Normally this is a summary of the job title or role.
+
+    FullDescription - The full text of the job ad as provided by the job advertiser.  Where you see ***s, we have stripped values from the description in order to ensure that no salary information appears within the descriptions.  There may be some collateral damage here where we have also removed other numerics.
+
+    LocationRaw - The freetext location as provided by the job advertiser.
+
+    LocationNormalized - Adzunas normalised location from within our own location tree, interpreted by us based on the raw location.  Our normaliser is not perfect!
+
+    ContractType - full_time or part_time, interpreted by Adzuna from description or a specific additional field we received from the advertiser.
+
+    ContractTime - permanent or contract, interpreted by Adzuna from description or a specific additional field we received from the advertiser.
+
+    Company - the name of the employer as supplied to us by the job advertiser.
+
+    Category - which of 30 standard job categories this ad fits into, inferred in a very messy way based on the source the ad came from.  We know there is a lot of noise and error in this field.
+
+    SalaryRaw - the freetext salary field we received in the job advert from the advertiser.
+
+    SalaryNormalised - the annualised salary interpreted by Adzuna from the raw salary.  Note that this is always a single value based on the midpoint of any range found in the raw salary.  This is the value we are trying to predict.
+
+    SourceName - the name of the website or advertiser from whom we received the job advert. 
+
+    All of the data is real, live data used in job ads so is clearly subject to lots of real world noise, including but not limited to: ads that are not UK based, salaries that are incorrectly stated, fields that are incorrectly normalised and duplicate adverts.
+"""
+)
 uploaded_file = st.sidebar.file_uploader("Upload your data file", type=".csv")
 
 if uploaded_file is not None:
@@ -110,7 +140,7 @@ def predict_callback():
     # prediction = get_prediction(test_data=test_df)
     disp_pred = pd.DataFrame(columns=["Id", "Title", "Location", "Predicted Salary"])
     disp_pred["Id"] = test_df["Id"]
-    disp_pred["Predicted Salary"] = pd.DataFrame(data=prediction)
+    disp_pred["Predicted Salary"] = pd.DataFrame(data=prediction,dtype=int)
     disp_pred["Title"] = test_df["Title"]
     disp_pred["Location"] = test_df["LocationNormalized"]
     # print(disp_pred.head())
