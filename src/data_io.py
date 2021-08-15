@@ -7,7 +7,7 @@ import pickle
 
 os.environ['SALARY_PRED'] = os.getcwd()
 
-settings_json_path = os.path.expandvars("$SALARY_PRED/src/Settings.json")
+settings_json_path = os.path.expandvars("$SALARY_PRED/src/SETTINGS.json")
 print(settings_json_path)
 
 def get_paths():
