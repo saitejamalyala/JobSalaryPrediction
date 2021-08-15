@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
+import os
 from data_io import get_paths,load_model
 
 st.set_page_config(layout='wide',initial_sidebar_state='expanded')
@@ -11,6 +13,12 @@ html_header="""
 st.markdown(html_header,unsafe_allow_html=True)
 
 st.header('Demo of **Job salary prediction **')
+
+#print(os.path.join('.','assets','images','Survey-img.jpg'))
+#image_main = Image.open(os.path.join('.','assets','images','Research-img.jpg'))
+
+#st.image(image_main,caption='copyright: https://www.payscale.com/salary-calculator',)
+
 st.write("""
 ### Data used for training: [Adzuna Job salary prediction Data set](https://www.kaggle.com/adzuna/job-salary-prediction)
 """)

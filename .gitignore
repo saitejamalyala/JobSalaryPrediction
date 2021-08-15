@@ -141,3 +141,4 @@ cython_debug/
 assets/data/*
 !assets/data/Test_rev1_mini.csv
 assets/results/*
+assets/images/*
