@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
-from PIL import Image
+import shap
 import os
+from matplotlib import pyplot as plt
 from data_io import get_paths,load_model
 
 st.set_page_config(layout='wide',initial_sidebar_state='expanded')
@@ -94,7 +95,7 @@ def predict_callback():
     with st.spinner('Prediction engine running....'):
         prediction = model.predict(test_df)
     #prediction = get_prediction(test_data=test_df)
-    disp_pred = pd.DataFrame(columns=['Id','Title','Location','predicted salary'])
+    disp_pred = pd.DataFrame(columns=['Id','Title','Location','Predicted Salary'])
     disp_pred['Id']= test_df['Id']
     disp_pred['Predicted Salary'] = pd.DataFrame(data=prediction)
     disp_pred['Title'] = test_df['Title']
