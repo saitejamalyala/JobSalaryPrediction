@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-import shap
-import os
 from matplotlib import pyplot as plt
 from data_io import get_paths,load_model
 
