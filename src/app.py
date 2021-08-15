@@ -23,7 +23,7 @@ st.write(
 ### Data used for training: [Adzuna Job salary prediction Data set](https://www.kaggle.com/adzuna/job-salary-prediction)
 """
 )
-
+st.write('---')
 st.sidebar.title("User Input Data")
 st.sidebar.markdown(
     """
@@ -103,6 +103,7 @@ st.dataframe(data=test_df.head())
 
 
 def predict_callback():
+    st.write('---')
     model = load_model()
     with st.spinner("Prediction engine running...."):
         prediction = model.predict(test_df)
