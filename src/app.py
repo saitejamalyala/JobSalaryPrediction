@@ -83,7 +83,8 @@ st.dataframe(data=test_df.head())
 
 def predict_callback():
     model = load_model()
-    prediction = model.predict(test_df)
+    with st.spinner('Prediction engine running....'):
+        prediction = model.predict(test_df)
     #prediction = get_prediction(test_data=test_df)
     disp_pred = pd.DataFrame(columns=['Id','Title','Location','predicted salary'])
     disp_pred['Id']= test_df['Id']
