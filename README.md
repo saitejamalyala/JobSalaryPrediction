@@ -26,6 +26,6 @@ To run the benchmark,
 4. Make predictions on the validation set by running `python src/predict.py`
 5. To run the streamlit app `streamlit run src/app.py`
 6. After 5 open the [Browser](http://localhost:8501/) if you are running in local machine or go to step 7
-7. Check the [public webapp](https://share.streamlit.io/saitejamalyala/jobsalaryprediction/src/app.py)
+7. Check the [job salary prediction webapp](https://share.streamlit.io/saitejamalyala/jobsalaryprediction/src/app.py)
 
 This benchmark took approximately 0.5 hours to execute on a Windows 10 laptop with 12GB of RAM and 8 cores at 2GHz.
