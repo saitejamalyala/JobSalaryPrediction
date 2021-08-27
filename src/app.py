@@ -8,7 +8,7 @@ st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 # from src.predict import get_prediction
 html_header = """
 <div>
-<h1 style="color:black;text-align:center;"> Stepstone Interview </h1> 
+<h1 style="color:black;text-align:center;"> Interview Demo </h1> 
 </div>"""
 st.markdown(html_header, unsafe_allow_html=True)
 
